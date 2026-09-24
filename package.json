@@ -1,0 +1,26 @@
+{
+  "name": "env-vars-proxy-status",
+  "displayName": "Env Vars PROXY Status",
+  "description": "Показывает индикатор корректных значений PROXY-переменных окружения.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": "git@github.com:sergeymakoveev/home-mac.git",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "build": "npm run build-js && npm run build-vsix",
+    "build-js": "tsc -p ./",
+    "build-vsix": "npx @vscode/vsce package",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.0.0"
+  }
+}
