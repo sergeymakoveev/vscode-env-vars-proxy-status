@@ -26,7 +26,7 @@ const message = isEnvVarsProxySettled
 export function activate(context: vscode.ExtensionContext): void {
   const statusItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 
-  statusItem.text = '$(circle-filled)';
+  statusItem.text = 'Proxy $(circle-filled)';
   statusItem.color = new vscode.ThemeColor(isEnvVarsProxySettled ? 'testing.iconPassed' : 'testing.iconFailed');
   statusItem.tooltip = message;
   statusItem.show();
