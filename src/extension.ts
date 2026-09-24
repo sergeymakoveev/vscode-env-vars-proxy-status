@@ -21,7 +21,10 @@ const envVarProxyStatuses = envVarProxyNames.reduce<Array<[EnvVarProxy, boolean]
 const isEnvVarsProxySettled = envVarProxyStatuses.every(([_, status]) => status);
 const message = isEnvVarsProxySettled
   ? 'PROXY is settled'
-  : `Lost: ${envVarProxyStatuses.reduce((message, [name, isSet]) => (isSet ? message : `${message}, ${name}`), '')}`;
+  : `Lost: ${envVarProxyStatuses
+      .filter(([_name, isSet]) => !isSet)
+      .map(([name]) => name)
+      .join(', ')}`;
 
 export function activate(context: vscode.ExtensionContext): void {
   const statusItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);

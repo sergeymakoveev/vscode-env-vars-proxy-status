@@ -2,7 +2,7 @@
   "name": "env-vars-proxy-status",
   "displayName": "Env Vars PROXY Status",
   "description": "Показывает индикатор корректных значений PROXY-переменных окружения.",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "publisher": "local",
   "license": "MIT",
   "repository": "git@github.com:sergeymakoveev/vscode-env-vars-proxy-status.git",
